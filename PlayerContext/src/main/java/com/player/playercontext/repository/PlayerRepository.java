@@ -1,0 +1,9 @@
+package com.player.playercontext.repository;
+
+import com.player.playercontext.entity.PlayerEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface PlayerRepository extends JpaRepository<PlayerEntity, Long> {
+}
