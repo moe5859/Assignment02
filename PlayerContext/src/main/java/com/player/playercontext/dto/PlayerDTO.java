@@ -7,6 +7,7 @@ import lombok.Setter;
 @Getter
 public class PlayerDTO {
     private String name;
+    @Getter
     private Long gameId;
 
     public PlayerDTO(String name, Long gameId) {
@@ -14,7 +15,4 @@ public class PlayerDTO {
         this.gameId = gameId;
     }
 
-    public Long getGameId() {
-        return gameId;
-    }
 }

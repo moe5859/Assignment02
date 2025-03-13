@@ -14,9 +14,10 @@ import java.util.List;
 @RequestMapping
 public class GameController {
     private final GameService gameService;
+    @SuppressWarnings("unused")
     private final GameRepository gameRepository;
 
-    public GameController(GameService gameService, GameRepository gameRepository) {
+    public GameController(GameService  gameService, GameRepository gameRepository) {
         this.gameService = gameService;
         this.gameRepository = gameRepository;
     }

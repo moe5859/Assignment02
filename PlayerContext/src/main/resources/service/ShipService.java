@@ -1,26 +1,22 @@
-package com.ship.shipcontext.service;
+package com.ship.shipcontext.shipcontext.service;
 
-import com.microservices.assignment02.entity.PlayerEntity;
-import com.microservices.assignment02.entity.ShipEntity;
-import com.microservices.assignment02.repository.PlayerRepository;
-import com.microservices.assignment02.repository.ShipRepository;
+import com.ship.shipcontext.entity.ShipEntity;
+
+import com.ship.shipcontext.repository.ShipRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class ShipService {
-    private final PlayerRepository playerRepository;
     private final ShipRepository shipRepository;
 
-    public ShipService(PlayerRepository playerRepository, ShipRepository shipRepository) {
-        this.playerRepository = playerRepository;
+    public ShipService( ShipRepository shipRepository) {
         this.shipRepository = shipRepository;
     }
 
     public List<ShipEntity> placeShips(Long playerId, List<String> positions) {
-        PlayerEntity player = playerRepository.findById(playerId)
-                .orElseThrow(() -> new RuntimeException("Player not found"));
+        String player = "player";
 
         for (String pos : positions) {
             int x = Character.getNumericValue(pos.charAt(0));

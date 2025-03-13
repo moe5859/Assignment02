@@ -2,13 +2,17 @@ package com.game.gamecontext.entity;
 import jakarta.persistence.*;
 
 import jakarta.persistence.Entity;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 public class GameEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
     private boolean active;
 
@@ -21,21 +25,5 @@ public class GameEntity {
     public GameEntity(String name) {
         this.name = name;
         this.active = true;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public boolean isActive() {
-        return active;
-    }
-
-    public boolean isFinished() {
-        return finished;
     }
 }

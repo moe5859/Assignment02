@@ -11,4 +11,5 @@ public class GameDTO {
     public GameDTO(String name) {
         this.name = name;
     }
+
 }

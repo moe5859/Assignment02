@@ -1,18 +1,20 @@
-package com.ship.shipcontext.entity;
-
+package com.ship.shipcontext.shipcontext.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import jakarta.persistence.Entity;
 
 @Entity
 public class ShipEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private int x;
     private int y;
+
     private int size;
-    //player
     private String player;
+
 
     public ShipEntity(int x, int y, int size, String player) {
         this.x = x;
@@ -51,10 +53,6 @@ public class ShipEntity {
     public void setSize(int size) {
         this.size = size;
     }
-
-    //public PlayerEntity getPlayer() {
-    //    return player;
-    //}
 
     public void setPlayer(String player) {
         this.player = player;
